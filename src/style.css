@@ -13,4 +13,37 @@
 }
 .logo i {
   font-size: 30px;
+}
+
+.main {
+  display: flex;
+}
+
+.navigation {
+  width: 300px;
+  min-width: 250px;
+  padding: 20px;
+}
+.navigation .current-projects, .navigation .project-list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2em;
+}
+.navigation .projects-header {
+  margin-top: 40px;
+}
+.navigation .project-list .project-button {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .add-proj-btn {
+  width: 50%;
+  margin-top: 20px;
+}
+
+.project-preview {
+  width: 900px;
+  padding: 20px 40px;
+  margin: 0 auto;
 }/*# sourceMappingURL=style.css.map */
