@@ -9,10 +9,12 @@
   align-items: center;
   padding: 20px;
   width: 15%;
-  background-color: aliceblue;
 }
 .logo i {
   font-size: 30px;
+}
+.logo .logo-text {
+  font-weight: bold;
 }
 
 .main {
