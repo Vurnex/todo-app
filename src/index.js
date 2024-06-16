@@ -38,3 +38,9 @@ document.getElementById('projBtn').addEventListener('click', () => {
     proj_header.textContent = projectTitle.textContent;
 
 });
+
+document.getElementById('projDeleteBtn').addEventListener('click', () => {
+
+    document.querySelector('.project-button').remove();
+
+});
