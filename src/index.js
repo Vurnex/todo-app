@@ -1,6 +1,8 @@
 import _ from 'lodash'
 import './style.css';
 
+import project from './functions/projects';
+
 let proj_header = document.getElementById('projName');
 
 function component() {
@@ -12,6 +14,8 @@ function component() {
 }
 
 document.body.appendChild(component());
+
+
 
 document.getElementById('inboxBtn').addEventListener('click', () => {
 
@@ -35,7 +39,9 @@ document.getElementById('projBtn').addEventListener('click', () => {
 
     let projectTitle = document.getElementsByClassName('project-btn-name')[0];
 
-    proj_header.textContent = projectTitle.textContent;
+    projectTitle.textContent = project();
+
+    //proj_header.textContent = projectTitle.textContent;
 
 });
 
