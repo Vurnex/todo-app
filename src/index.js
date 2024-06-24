@@ -37,9 +37,9 @@ document.getElementById('thisWeekBtn').addEventListener('click', () => {
 
 document.getElementById('projBtn').addEventListener('click', () => {
 
-    let projectTitle = document.getElementsByClassName('project-btn-name')[0];
+    //let projectTitle = document.getElementsByClassName('project-btn-name')[0];
 
-    projectTitle.textContent = project();
+    //projectTitle.textContent = project();
 
     //proj_header.textContent = projectTitle.textContent;
 
