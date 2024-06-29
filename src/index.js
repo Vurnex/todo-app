@@ -50,3 +50,15 @@ document.getElementById('projDeleteBtn').addEventListener('click', () => {
     document.querySelector('.project-button').remove();
 
 });
+
+document.getElementById('add-proj-btn').addEventListener('click', () => {
+
+    document.getElementById('add-proj-popup').style.display = 'inherit';
+
+});
+
+document.getElementById('btn-cancel-proj-popup').addEventListener('click', () => {
+
+    document.getElementById('add-proj-popup').style.display = 'none';
+
+});
