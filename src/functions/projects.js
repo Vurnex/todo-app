@@ -8,12 +8,16 @@ class Project {
 
 }
 
-export default function project() {
+let projectList = [];
 
-    let projectTitle = "testClass";
+export default function newProject(projectName) {
+
+    let projectTitle = projectName;
 
     const newProject = new Project(projectTitle);
 
-    return newProject.title;
+    projectList.push(newProject);
+
+    return projectList;
 
 }

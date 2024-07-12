@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import './style.css';
 
-import project from './functions/projects';
+import newProject from './functions/projects';
 
 let proj_header = document.getElementById('projName');
 
@@ -39,7 +39,7 @@ document.getElementById('projBtn').addEventListener('click', () => {
 
     //let projectTitle = document.getElementsByClassName('project-btn-name')[0];
 
-    //projectTitle.textContent = project();
+    //projectTitle.textContent = newProject();
 
     //proj_header.textContent = projectTitle.textContent;
 
@@ -61,4 +61,12 @@ document.getElementById('btn-cancel-proj-popup').addEventListener('click', () =>
 
     document.getElementById('add-proj-popup').style.display = 'none';
 
+});
+
+document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
+
+
+    let projectName = document.getElementById('input-add-project-popup').value;
+
+    console.log(newProject(projectName));
 });
