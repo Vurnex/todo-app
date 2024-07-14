@@ -2,6 +2,7 @@ import _ from 'lodash'
 import './style.css';
 
 import newProject from './functions/projects';
+import addButton from './functions/addButton';
 
 let proj_header = document.getElementById('projName');
 
@@ -67,6 +68,10 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
 
     let projectName = document.getElementById('input-add-project-popup').value;
+
+    let projectButtonList = document.getElementById('projList');
+
+    projectButtonList.appendChild(addButton());
 
     console.log(newProject(projectName));
 });
