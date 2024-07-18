@@ -1,4 +1,10 @@
-export default function addButton() {
+import newProject from "./projects";
+
+export default function addButton(projectName) {
+
+    let projTitle = newProject(projectName);
+
+    //console.log(projTitle);
 
     let newButton = document.createElement('button');
 
@@ -13,7 +19,8 @@ export default function addButton() {
 
     let buttonText = document.createElement('span');
     buttonText.classList.add("project-btn-name");
-    buttonText.textContent = "Test New Project Button";
+    //buttonText.textContent = "Test New Project Button";
+    buttonText.textContent = projTitle;
 
     leftElements.appendChild(leftIcon);
     leftElements.appendChild(buttonText);

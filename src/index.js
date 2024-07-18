@@ -71,7 +71,7 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     let projectButtonList = document.getElementById('projList');
 
-    projectButtonList.appendChild(addButton());
+    projectButtonList.appendChild(addButton(projectName));
 
     console.log(newProject(projectName));
 });

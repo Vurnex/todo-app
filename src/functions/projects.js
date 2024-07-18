@@ -8,7 +8,7 @@ class Project {
 
 }
 
-let projectList = [];
+//let projectList = [];
 
 export default function newProject(projectName) {
 
@@ -16,8 +16,10 @@ export default function newProject(projectName) {
 
     const newProject = new Project(projectTitle);
 
-    projectList.push(newProject);
+    //projectList.push(newProject);
 
-    return projectList;
+    console.log(newProject.title);
+
+    return newProject.title;
 
 }
