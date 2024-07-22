@@ -46,11 +46,20 @@ document.getElementById('projBtn').addEventListener('click', () => {
 
 });
 
+/*
+
 document.getElementById('projDeleteBtn').addEventListener('click', () => {
 
     document.querySelector('.project-button').remove();
 
-});
+});  */
+
+document.addEventListener('click', function(e) {
+
+    if(e.target && e.target.id== 'projDeleteBtn') {
+          e.target.parentElement.parentElement.remove();
+     }
+ });
 
 document.getElementById('add-proj-btn').addEventListener('click', () => {
 
