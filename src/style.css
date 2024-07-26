@@ -67,4 +67,24 @@
   width: 900px;
   padding: 20px 40px;
   margin: 0 auto;
+}
+
+.task-list {
+  margin: 1em 0 1em 0;
+}
+
+.button-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-task-panel {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.left-task-panel p {
+  margin-top: revert;
 }/*# sourceMappingURL=style.css.map */
