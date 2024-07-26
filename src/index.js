@@ -36,29 +36,20 @@ document.getElementById('thisWeekBtn').addEventListener('click', () => {
 
 });
 
-document.getElementById('projBtn').addEventListener('click', () => {
-
-    //let projectTitle = document.getElementsByClassName('project-btn-name')[0];
-
-    //projectTitle.textContent = newProject();
-
-    //proj_header.textContent = projectTitle.textContent;
-
-});
-
-/*
-
-document.getElementById('projDeleteBtn').addEventListener('click', () => {
-
-    document.querySelector('.project-button').remove();
-
-});  */
-
 document.addEventListener('click', function(e) {
+
+    let projTitle = "";
 
     if(e.target && e.target.id== 'projDeleteBtn') {
           e.target.parentElement.parentElement.remove();
-     }
+    }
+
+    if(e.target && e.target.id== 'projBtn') {
+
+        projTitle = e.target.textContent;
+        console.log(projTitle);
+        proj_header.textContent = projTitle;
+    }
  });
 
 document.getElementById('add-proj-btn').addEventListener('click', () => {

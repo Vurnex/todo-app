@@ -9,7 +9,7 @@ export default function addButton(projectName) {
     let newButton = document.createElement('button');
 
     newButton.classList.add("project-button");
-    //newButton.textContent = "New Button";
+    newButton.setAttribute("id", "projBtn");
 
     let leftElements = document.createElement('div');
     leftElements.classList.add("proj-btn-left");
@@ -19,7 +19,6 @@ export default function addButton(projectName) {
 
     let buttonText = document.createElement('span');
     buttonText.classList.add("project-btn-name");
-    //buttonText.textContent = "Test New Project Button";
     buttonText.textContent = projTitle;
 
     leftElements.appendChild(leftIcon);
