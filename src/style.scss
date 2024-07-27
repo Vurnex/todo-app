@@ -117,3 +117,26 @@
         margin-top: revert;
     }
 }
+
+.add-task-popup {
+
+    display: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.add-task-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1em;
+    width: 60%;
+    
+}
+
+.add-task-popup-buttons {
+
+    display: flex;
+    gap: 1em;
+}

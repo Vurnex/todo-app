@@ -75,3 +75,17 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     console.log(newProject(projectName));
 });
+
+document.getElementById('add-tsk-btn').addEventListener('click', () => {
+
+    document.getElementById('add-tsk-popup').style.display = 'inherit';
+
+});
+
+document.getElementById('btn-cancel-tsk-popup').addEventListener('click', () => {
+
+    document.getElementById('add-tsk-popup').style.display = 'none';
+
+});
+
+//Add dynamic tasks
