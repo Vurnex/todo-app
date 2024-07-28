@@ -87,5 +87,3 @@ document.getElementById('btn-cancel-tsk-popup').addEventListener('click', () => 
     document.getElementById('add-tsk-popup').style.display = 'none';
 
 });
-
-//Add dynamic tasks
