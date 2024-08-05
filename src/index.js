@@ -45,6 +45,10 @@ document.addEventListener('click', function(e) {
           e.target.parentElement.parentElement.remove();
     }
 
+    if(e.target && e.target.id== 'taskDeleteBtn') {
+        e.target.parentElement.parentElement.remove();
+    }
+
     if(e.target && e.target.id== 'projBtn') {
 
         projTitle = e.target.textContent;

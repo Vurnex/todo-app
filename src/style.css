@@ -90,6 +90,15 @@
   margin-top: revert;
 }
 
+.right-task-panel {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.right-task-panel i {
+  font-size: 1.2em;
+}
+
 .add-task-popup {
   display: none;
   margin-top: 1em;

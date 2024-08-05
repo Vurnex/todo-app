@@ -119,6 +119,17 @@
     }
 }
 
+.right-task-panel {
+
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    i {
+        font-size: 1.2em;
+    }
+}
+
 .add-task-popup {
 
     display: none;

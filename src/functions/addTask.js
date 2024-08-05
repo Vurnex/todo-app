@@ -35,8 +35,13 @@ export default function addTask(taskDesc) {
     let rightDesc = document.createElement('p');
     rightDesc.classList.add("task-date");
 
+    let rightIcon = document.createElement('i');
+    rightIcon.classList.add("fas", "fa-times");
+    rightIcon.setAttribute("id", "taskDeleteBtn");
+
     rightElements.appendChild(rightDesc);
     rightElements.appendChild(rightInput);
+    rightElements.appendChild(rightIcon);
 
     newButton.appendChild(rightElements);
 
