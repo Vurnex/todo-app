@@ -3,6 +3,7 @@ import './style.css';
 
 import newProject from './functions/projects';
 import addButton from './functions/addButton';
+import addTask from './functions/addTask';
 
 let proj_header = document.getElementById('projName');
 
@@ -73,7 +74,7 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     projectButtonList.appendChild(addButton(projectName));
 
-    console.log(newProject(projectName));
+    //console.log(newProject(projectName));
 });
 
 document.getElementById('add-tsk-btn').addEventListener('click', () => {
@@ -85,5 +86,16 @@ document.getElementById('add-tsk-btn').addEventListener('click', () => {
 document.getElementById('btn-cancel-tsk-popup').addEventListener('click', () => {
 
     document.getElementById('add-tsk-popup').style.display = 'none';
+
+});
+
+document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
+
+    let taskDescription = document.getElementById('input-add-tsk-popup').value;
+
+    let taskList = document.getElementById('tsk-lst');
+
+    taskList.appendChild(addTask(taskDescription));
+
 
 });
