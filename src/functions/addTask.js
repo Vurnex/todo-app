@@ -17,7 +17,7 @@ export default function addTask(taskDesc) {
 
     let leftDesc = document.createElement('p');
     leftDesc.classList.add("task-content");
-    leftDesc.textContent = "New Dynamic Task";
+    leftDesc.textContent = taskDescription;
 
     leftElements.appendChild(leftInput);
     leftElements.appendChild(leftDesc);
