@@ -66,6 +66,7 @@ document.getElementById('add-proj-btn').addEventListener('click', () => {
 document.getElementById('btn-cancel-proj-popup').addEventListener('click', () => {
 
     document.getElementById('add-proj-popup').style.display = 'none';
+    document.getElementById('input-add-project-popup').value = '';
 
 });
 
@@ -90,6 +91,7 @@ document.getElementById('add-tsk-btn').addEventListener('click', () => {
 document.getElementById('btn-cancel-tsk-popup').addEventListener('click', () => {
 
     document.getElementById('add-tsk-popup').style.display = 'none';
+    document.getElementById('input-add-tsk-popup').value = '';
 
 });
 
@@ -103,3 +105,7 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
 
 });
+
+//Clear inputs on cancel
+
+//Set text limit for inputs if necessary
