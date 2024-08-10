@@ -19,21 +19,15 @@ document.body.appendChild(component());
 
 
 
-document.getElementById('inboxBtn').addEventListener('click', () => {
+document.getElementById('homeBtn').addEventListener('click', () => {
 
-    proj_header.textContent = "Inbox";
-
-});
-
-document.getElementById('todayBtn').addEventListener('click', () => {
-
-    proj_header.textContent = "Today";
+    proj_header.textContent = "All Tasks";
 
 });
 
-document.getElementById('thisWeekBtn').addEventListener('click', () => {
+document.getElementById('allProjsBtn').addEventListener('click', () => {
 
-    proj_header.textContent = "This Week";
+    proj_header.textContent = "All Projects";
 
 });
 
@@ -108,7 +102,7 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
 document.getElementById("dateInput").addEventListener("change", function() {
     var input = this.value;
-    var dateEntered = new Date(input);
+    var dateEntered = new Date();
     console.log(input); //e.g. 2015-11-13
     console.log(dateEntered); //e.g. Fri Nov 13 2015 00:00:00 GMT+0000 (GMT Standard Time)
 });
