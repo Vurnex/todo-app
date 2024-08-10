@@ -30,7 +30,7 @@ export default function addTask(taskDesc) {
     let rightInput = document.createElement('input');
     rightInput.setAttribute("type", "date");
     rightInput.setAttribute("name", "");
-    rightInput.setAttribute("id", "");
+    rightInput.setAttribute("id", "dateInput");
 
     let rightDesc = document.createElement('p');
     rightDesc.classList.add("task-date");
