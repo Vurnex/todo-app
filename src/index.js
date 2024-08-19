@@ -7,6 +7,9 @@ import addTask from './functions/addTask';
 
 let proj_header = document.getElementById('projName');
 
+let allTasks = [];
+let allProjects = [];
+
 function component() {
 
     const element = document.createElement('div');
@@ -36,7 +39,16 @@ document.addEventListener('click', function(e) {
     let projTitle = "";
 
     if(e.target && e.target.id== 'projDeleteBtn') {
-          e.target.parentElement.parentElement.remove();
+        
+        let projTitleIndex = e.target.parentElement.parentElement.textContent;
+        e.target.parentElement.parentElement.remove();
+
+        console.log(projTitleIndex);
+
+        const projIndex = allProjects.indexOf(projTitleIndex);
+        allProjects.splice(projIndex, 1);
+
+        console.log(allProjects);
     }
 
     if(e.target && e.target.id== 'taskDeleteBtn') {
@@ -69,6 +81,9 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     let projectName = document.getElementById('input-add-project-popup').value;
 
+    allProjects.push(projectName);
+    console.log(allProjects);
+
     let projectButtonList = document.getElementById('projList');
 
     projectButtonList.appendChild(addButton(projectName));
@@ -93,10 +108,12 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
     let taskDescription = document.getElementById('input-add-tsk-popup').value;
 
+    allTasks.push(taskDescription);
+    console.log(allTasks);
+
     let taskList = document.getElementById('tsk-lst');
 
     taskList.appendChild(addTask(taskDescription));
-
 
 });
 
