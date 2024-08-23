@@ -1,13 +1,15 @@
 import _ from 'lodash'
 import './style.css';
 
-import newProject from './functions/projects';
+import Project from './functions/projects';
 import addButton from './functions/addButton';
 import addTask from './functions/addTask';
+import populateData from './functions/populateData';
 
 let proj_header = document.getElementById('projName');
 
 let allTasks = [];
+let allDates = [];
 let allProjects = [];
 
 function component() {
@@ -20,6 +22,7 @@ function component() {
 
 document.body.appendChild(component());
 
+populateData(allProjects);
 
 
 document.getElementById('homeBtn').addEventListener('click', () => {
@@ -39,7 +42,7 @@ document.addEventListener('click', function(e) {
     let projTitle = "";
 
     if(e.target && e.target.id== 'projDeleteBtn') {
-        
+
         let projTitleIndex = e.target.parentElement.parentElement.textContent;
         e.target.parentElement.parentElement.remove();
 
@@ -81,14 +84,15 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     let projectName = document.getElementById('input-add-project-popup').value;
 
-    allProjects.push(projectName);
+    const nextProject = new Project(projectName, "Task", "8/23/24");
+
+    allProjects.push(nextProject);
     console.log(allProjects);
 
     let projectButtonList = document.getElementById('projList');
 
     projectButtonList.appendChild(addButton(projectName));
 
-    //console.log(newProject(projectName));
 });
 
 document.getElementById('add-tsk-btn').addEventListener('click', () => {
@@ -108,9 +112,6 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
     let taskDescription = document.getElementById('input-add-tsk-popup').value;
 
-    allTasks.push(taskDescription);
-    console.log(allTasks);
-
     let taskList = document.getElementById('tsk-lst');
 
     taskList.appendChild(addTask(taskDescription));
@@ -118,12 +119,24 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 });
 
 document.getElementById("dateInput").addEventListener("change", function() {
+    
     var input = this.value;
-    var dateEntered = new Date();
+    //var dateEntered = new Date();
     console.log(input); //e.g. 2015-11-13
-    console.log(dateEntered); //e.g. Fri Nov 13 2015 00:00:00 GMT+0000 (GMT Standard Time)
+    //console.log(dateEntered); //e.g. Fri Nov 13 2015 00:00:00 GMT+0000 (GMT Standard Time)
+
+    this.value = input
+
+    /*
+
+    const str = "2024/08/25";
+
+    const [year, month, day] = str.split('/');
+
+    const date = `${year}-${month}-${day}`;
+
+    //this.value = date;
+
+    */
+
 });
-
-// Get date from date input
-
-//Populate project preview with projects and tasks

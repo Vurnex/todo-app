@@ -1,14 +1,18 @@
-class Project {
+export default class Project {
 
-    constructor(title) {
+    constructor(title, task, date) {
 
         this.title = title;
+        this.task = task;
+        this.date = date;
 
     }
 
 }
 
 //let projectList = [];
+
+/*
 
 export default function newProject(projectName) {
 
@@ -18,8 +22,8 @@ export default function newProject(projectName) {
 
     //projectList.push(newProject);
 
-    console.log(newProject.title);
+    //console.log(newProject.title);
 
     return newProject.title;
 
-}
+} */

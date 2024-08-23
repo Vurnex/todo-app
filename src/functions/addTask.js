@@ -1,8 +1,6 @@
-import newTask from "./tasks";
-
 export default function addTask(taskDesc) {
 
-    let taskDescription = newTask(taskDesc);
+    let taskDescription = taskDesc;
 
     let newButton = document.createElement('button');
 

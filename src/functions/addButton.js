@@ -1,8 +1,6 @@
-import newProject from "./projects";
-
 export default function addButton(projectName) {
 
-    let projTitle = newProject(projectName);
+    let projTitle = projectName;
 
     //console.log(projTitle);
 
@@ -36,8 +34,6 @@ export default function addButton(projectName) {
     rightElements.appendChild(rightIcon);
 
     newButton.appendChild(rightElements);
-
-
 
     return newButton;
 }
