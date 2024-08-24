@@ -1,6 +1,7 @@
-export default function addTask(taskDesc) {
+export default function addTask(taskDesc, tskDate) {
 
     let taskDescription = taskDesc;
+    let taskDate = tskDate;
 
     let newButton = document.createElement('button');
 
@@ -29,6 +30,7 @@ export default function addTask(taskDesc) {
     rightInput.setAttribute("type", "date");
     rightInput.setAttribute("name", "");
     rightInput.setAttribute("id", "dateInput");
+    rightInput.setAttribute("value", taskDate);
 
     let rightDesc = document.createElement('p');
     rightDesc.classList.add("task-date");

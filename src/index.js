@@ -114,7 +114,7 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
     let taskList = document.getElementById('tsk-lst');
 
-    taskList.appendChild(addTask(taskDescription));
+    taskList.appendChild(addTask(taskDescription, "2024-08-24"));
 
 });
 
