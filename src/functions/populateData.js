@@ -14,14 +14,22 @@ export default function populateData(allProjects) {
     
     allProjects.forEach(function (arrayItem) {
 
-        console.log(arrayItem.title);
+        let projTitle = arrayItem.title;
+
+        let projectButtonList = document.getElementById('projList');
+
+        projectButtonList.appendChild(addButton(projTitle));
+
+        //console.log(projTitle);
+
+        //console.log(arrayItem.title);
 
         //console.log("Test array function");
 
 
     })
 
-
+    
 
 
 }

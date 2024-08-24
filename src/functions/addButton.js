@@ -2,7 +2,7 @@ export default function addButton(projectName) {
 
     let projTitle = projectName;
 
-    //console.log(projTitle);
+    //console.log("projTitle");
 
     let newButton = document.createElement('button');
 
