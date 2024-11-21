@@ -4,9 +4,7 @@ import Project from "./projects";
 
 export default function populateData(allProjects) {
 
-    //console.log("Test populate function");
-
-    allProjects.push(
+    allProjects.push( //Populate with example tasks
         {title: "Project 1", task: "New Pre Task", date: "2024-08-24"},
         {title: "Project 2", task: "New Pre Task 2", date: "2024-08-24"},
         {title: "Project 3", task: "New Pre Task 3", date: "2024-08-24"}
@@ -25,12 +23,6 @@ export default function populateData(allProjects) {
         let taskList = document.getElementById('tsk-lst');
     
         taskList.appendChild(addTask(taskDesc, taskDate));
-
-        //console.log(projTitle);
-
-        //console.log(arrayItem.title);
-
-        //console.log("Test array function");
 
 
     })

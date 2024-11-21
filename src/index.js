@@ -114,7 +114,14 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
     let taskList = document.getElementById('tsk-lst');
 
-    taskList.appendChild(addTask(taskDescription, "2024-08-24"));
+    //Get Current Date & Format It
+
+    let newDate = new Date();
+    let yourDate = newDate.toISOString().split('T')[0];
+
+    console.log(yourDate);
+
+    taskList.appendChild(addTask(taskDescription, yourDate));
 
 });
 
@@ -140,3 +147,6 @@ document.getElementById("dateInput").addEventListener("change", function() {
     */
 
 });
+
+//Get status of tasks from checkboxes
+//Apply current date on newly created task
