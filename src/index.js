@@ -22,7 +22,7 @@ function component() {
 
 document.body.appendChild(component());
 
-populateData(allProjects);
+populateData(allProjects, "default");
 
 
 document.getElementById('homeBtn').addEventListener('click', () => {
@@ -63,6 +63,8 @@ document.addEventListener('click', function(e) {
         projTitle = e.target.textContent;
         console.log(projTitle);
         proj_header.textContent = projTitle;
+
+        populateData(allProjects, projTitle);
     }
  });
 
