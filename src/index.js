@@ -116,6 +116,8 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
     let taskList = document.getElementById('tsk-lst');
 
+    let currentProj = proj_header.textContent;
+
     //Get Current Date & Format It
 
     let newDate = new Date();
@@ -124,6 +126,9 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
     console.log(yourDate);
 
     taskList.appendChild(addTask(taskDescription, yourDate));
+
+    allProjects.push(
+        {title: currentProj, task: taskDescription, date: yourDate });
 
 });
 
