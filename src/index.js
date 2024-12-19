@@ -12,6 +12,9 @@ let allTasks = [];
 let allDates = [];
 let allProjects = [];
 
+let projID = 4;
+let taskID = 4;
+
 function component() {
 
     const element = document.createElement('div');
@@ -46,16 +49,28 @@ document.addEventListener('click', function(e) {
         let projTitleIndex = e.target.parentElement.parentElement.textContent;
         e.target.parentElement.parentElement.remove();
 
-        console.log(projTitleIndex);
+        //console.log(projTitleIndex);
 
         const projIndex = allProjects.indexOf(projTitleIndex);
         allProjects.splice(projIndex, 1);
 
-        console.log(allProjects);
+        //console.log(allProjects);
     }
 
     if(e.target && e.target.id== 'taskDeleteBtn') {
+
+        let currTaskIndex = e.target.parentElement.parentElement.id;
+        currTaskIndex = Number(currTaskIndex);
         e.target.parentElement.parentElement.remove();
+
+        console.log(currTaskIndex);
+
+        //const taskIndex = allProjects.indexOf(currTaskIndex);
+        //allProjects.splice(taskIndex, 1);
+
+        allProjects = allProjects.filter(item => item.taskID !== currTaskIndex);
+
+        console.log(allProjects);
     }
 
     if(e.target && e.target.id== 'projBtn') {
@@ -86,10 +101,13 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     let projectName = document.getElementById('input-add-project-popup').value;
 
-    const nextProject = new Project(projectName, "Task", "8/23/24");
+    const nextProject = new Project(projectName, projID, "Task", taskID, "8/23/24");
 
     allProjects.push(nextProject);
     console.log(allProjects);
+
+    projID++;
+    taskID++;
 
     let projectButtonList = document.getElementById('projList');
 
@@ -135,25 +153,11 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 document.getElementById("dateInput").addEventListener("change", function() {
     
     var input = this.value;
-    //var dateEntered = new Date();
+    
     console.log(input); //e.g. 2015-11-13
-    //console.log(dateEntered); //e.g. Fri Nov 13 2015 00:00:00 GMT+0000 (GMT Standard Time)
 
     this.value = input
-
-    /*
-
-    const str = "2024/08/25";
-
-    const [year, month, day] = str.split('/');
-
-    const date = `${year}-${month}-${day}`;
-
-    //this.value = date;
-
-    */
 
 });
 
 //Get status of tasks from checkboxes
-//Apply current date on newly created task

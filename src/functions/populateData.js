@@ -10,9 +10,9 @@ export default function populateData(allProjects, selectedProj) {
     if (selectedProj == "default") {
 
         allProjects.push( //Populate with example tasks
-            {title: "Project 1", task: "New Pre Task", date: "2024-08-24"},
-            {title: "Project 2", task: "New Pre Task 2", date: "2024-08-25"},
-            {title: "Project 3", task: "New Pre Task 3", date: "2024-08-26"}
+            {title: "Project 1", projID: 1, task: "New Pre Task", taskID: 1, date: "2024-08-24"},
+            {title: "Project 2", projID: 2, task: "New Pre Task 2", taskID: 2, date: "2024-08-25"},
+            {title: "Project 3", projID: 3, task: "New Pre Task 3", taskID: 3, date: "2024-08-26"}
         );
 
 
@@ -26,12 +26,13 @@ export default function populateData(allProjects, selectedProj) {
             let projTitle = arrayItem.title;
             let taskDesc = arrayItem.task;
             let taskDate = arrayItem.date;
+            let taskID = arrayItem.taskID;
     
             //let projectButtonList = document.getElementById('projList');
     
             //projectButtonList.appendChild(addButton(projTitle));
         
-            taskList.appendChild(addTask(taskDesc, taskDate));
+            taskList.appendChild(addTask(taskDesc, taskDate, taskID));
 
         }
         else if (selectedProj == "default") {
@@ -39,6 +40,7 @@ export default function populateData(allProjects, selectedProj) {
             let projTitle = arrayItem.title;
             let taskDesc = arrayItem.task;
             let taskDate = arrayItem.date;
+            let taskID = arrayItem.taskID;
     
             let projectButtonList = document.getElementById('projList');
     
@@ -46,7 +48,7 @@ export default function populateData(allProjects, selectedProj) {
     
             let taskList = document.getElementById('tsk-lst');
         
-            taskList.appendChild(addTask(taskDesc, taskDate));
+            taskList.appendChild(addTask(taskDesc, taskDate, taskID));
 
 
         };

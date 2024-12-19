@@ -1,29 +1,13 @@
 export default class Project {
 
-    constructor(title, task, date) {
+    constructor(title, projID, task, taskID, date) {
 
         this.title = title;
+        this.projID = projID;
         this.task = task;
+        this.taskID = taskID;
         this.date = date;
 
     }
 
-}
-
-//let projectList = [];
-
-/*
-
-export default function newProject(projectName) {
-
-    let projectTitle = projectName;
-
-    const newProject = new Project(projectTitle);
-
-    //projectList.push(newProject);
-
-    //console.log(newProject.title);
-
-    return newProject.title;
-
-} */
+};

@@ -1,9 +1,11 @@
-export default function addTask(taskDesc, tskDate) {
+export default function addTask(taskDesc, tskDate, tskID) {
 
     let taskDescription = taskDesc;
     let taskDate = tskDate;
+    let taskID = tskID;
 
     let newButton = document.createElement('button');
+    newButton.setAttribute("id", taskID);
 
     newButton.classList.add("button-task", "btn", "btn-light");
 
