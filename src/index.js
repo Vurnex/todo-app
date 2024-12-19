@@ -32,6 +32,10 @@ document.getElementById('homeBtn').addEventListener('click', () => {
 
     proj_header.textContent = "All Tasks";
 
+    let allTasks = proj_header.textContent;
+
+    populateData(allProjects, allTasks);
+
 });
 
 document.getElementById('allProjsBtn').addEventListener('click', () => {
@@ -148,6 +152,8 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
     allProjects.push(
         {title: currentProj, task: taskDescription, date: yourDate });
 
+    console.log(allProjects);
+
 });
 
 document.getElementById("dateInput").addEventListener("change", function() {
@@ -160,4 +166,7 @@ document.getElementById("dateInput").addEventListener("change", function() {
 
 });
 
+
+//Get current project ID for when task is deleted
 //Get status of tasks from checkboxes
+//Set local storage

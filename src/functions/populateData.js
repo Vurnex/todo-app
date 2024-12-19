@@ -35,7 +35,7 @@ export default function populateData(allProjects, selectedProj) {
             taskList.appendChild(addTask(taskDesc, taskDate, taskID));
 
         }
-        else if (selectedProj == "default") {
+        else if (selectedProj == "default" || selectedProj == "All Tasks") {
 
             let projTitle = arrayItem.title;
             let taskDesc = arrayItem.task;
@@ -43,8 +43,11 @@ export default function populateData(allProjects, selectedProj) {
             let taskID = arrayItem.taskID;
     
             let projectButtonList = document.getElementById('projList');
-    
-            projectButtonList.appendChild(addButton(projTitle));
+
+            if (selectedProj == "default") {
+
+                projectButtonList.appendChild(addButton(projTitle));
+            }
     
             let taskList = document.getElementById('tsk-lst');
         
