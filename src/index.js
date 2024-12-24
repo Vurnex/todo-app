@@ -69,9 +69,6 @@ document.addEventListener('click', function(e) {
 
         console.log(currTaskIndex);
 
-        //const taskIndex = allProjects.indexOf(currTaskIndex);
-        //allProjects.splice(taskIndex, 1);
-
         allProjects = allProjects.filter(item => item.taskID !== currTaskIndex);
 
         console.log(allProjects);
@@ -147,11 +144,14 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
     console.log(yourDate);
 
-    taskList.appendChild(addTask(taskDescription, yourDate));
+    taskList.appendChild(addTask(taskDescription, yourDate, taskID));
 
     allProjects.push(
-        {title: currentProj, task: taskDescription, date: yourDate });
+        {title: currentProj, projID: projID, task: taskDescription, taskID: taskID, date: yourDate }
+    );
 
+    taskID++;
+        
     console.log(allProjects);
 
 });
