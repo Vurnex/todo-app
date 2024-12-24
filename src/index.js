@@ -158,12 +158,29 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
 document.addEventListener("change", function(e) {
 
+    let input;
+
     if (e.target.id == "dateInput") {
 
-        let input = e.target.value;
+        input = e.target.value;
         console.log(input);
-
     }
+
+    let dateTaskID = e.target.parentElement.parentElement.id;
+    dateTaskID = Number(dateTaskID);
+    console.log(dateTaskID);
+
+
+    allProjects = allProjects.map(obj => {
+
+        if (obj.taskID === dateTaskID) {
+
+            return { ...obj, date: input};
+        }
+        return obj;
+    })
+
+    console.log(allProjects);
 
 
 });
