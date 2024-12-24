@@ -55,8 +55,8 @@ document.addEventListener('click', function(e) {
 
         //console.log(projTitleIndex);
 
-        const projIndex = allProjects.indexOf(projTitleIndex);
-        allProjects.splice(projIndex, 1);
+        //const projIndex = allProjects.indexOf(projTitleIndex);
+        //allProjects.splice(projIndex, 1);
 
         //console.log(allProjects);
     }
@@ -156,13 +156,15 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
 });
 
-document.getElementById("dateInput").addEventListener("change", function() {
-    
-    var input = this.value;
-    
-    console.log(input); //e.g. 2015-11-13
+document.addEventListener("change", function(e) {
 
-    this.value = input
+    if (e.target.id == "dateInput") {
+
+        let input = e.target.value;
+        console.log(input);
+
+    }
+
 
 });
 
