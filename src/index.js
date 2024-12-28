@@ -48,7 +48,7 @@ document.addEventListener('click', function(e) {
 
     let projTitle = "";
 
-    if(e.target && e.target.id== 'projDeleteBtn') {
+    if(e.target && e.target.id == 'projDeleteBtn') {
 
         let projTitleIndex = e.target.parentElement.parentElement.textContent;
         e.target.parentElement.parentElement.remove();
@@ -76,7 +76,7 @@ document.addEventListener('click', function(e) {
 
     if(e.target && e.target.id== 'projBtn') {
 
-        projTitle = e.target.textContent;
+        projTitle = e.target.textContent; //edit the text to be appended as text content of the button instead of inside a span element
         console.log(projTitle);
         proj_header.textContent = projTitle;
 
@@ -158,29 +158,39 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
 
 document.addEventListener("change", function(e) {
 
-    let input;
-
     if (e.target.id == "dateInput") {
 
-        input = e.target.value;
+        let input = e.target.value;
         console.log(input);
+
+        let dateTaskID = e.target.parentElement.parentElement.id;
+        dateTaskID = Number(dateTaskID);
+        console.log(dateTaskID);
+    
+    
+        allProjects = allProjects.map(obj => {
+    
+            if (obj.taskID === dateTaskID) {
+    
+                return { ...obj, date: input};
+            }
+            return obj;
+        });
+    
+        console.log(allProjects);
     }
 
-    let dateTaskID = e.target.parentElement.parentElement.id;
-    dateTaskID = Number(dateTaskID);
-    console.log(dateTaskID);
 
+    if (e.target.id == "taskCheckBox" && e.target.checked) {
 
-    allProjects = allProjects.map(obj => {
+        console.log("Checked");
 
-        if (obj.taskID === dateTaskID) {
+        e.target.parentElement.parentElement.classList.toggle("task-complete");
+    }
+    else if (e.target.id == "taskCheckBox" && e.target.checked == false) {
 
-            return { ...obj, date: input};
-        }
-        return obj;
-    })
-
-    console.log(allProjects);
+        e.target.parentElement.parentElement.classList.toggle("task-complete");
+    }
 
 
 });

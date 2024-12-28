@@ -116,4 +116,9 @@
 .add-task-popup-buttons {
   display: flex;
   gap: 1em;
+}
+
+.task-complete {
+  opacity: 50%;
+  text-decoration: line-through;
 }/*# sourceMappingURL=style.css.map */

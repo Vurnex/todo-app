@@ -15,6 +15,7 @@ export default function addTask(taskDesc, tskDate, tskID) {
     let leftInput = document.createElement('input');
     leftInput.classList.add("form-check-input");
     leftInput.setAttribute("type", "checkbox");
+    leftInput.setAttribute("id", "taskCheckBox");
 
     let leftDesc = document.createElement('p');
     leftDesc.classList.add("task-content");
