@@ -102,7 +102,7 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     let projectName = document.getElementById('input-add-project-popup').value;
 
-    const nextProject = new Project(projectName, projID, "Task", taskID, "8/23/24");
+    const nextProject = new Project(projectName, projID, "Task", taskID, "8/23/24", false);
 
     allProjects.push(nextProject);
     console.log(allProjects);
@@ -147,7 +147,7 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
     taskList.appendChild(addTask(taskDescription, yourDate, taskID));
 
     allProjects.push(
-        {title: currentProj, projID: projID, task: taskDescription, taskID: taskID, date: yourDate }
+        {title: currentProj, projID: projID, task: taskDescription, taskID: taskID, date: yourDate, status: false }
     );
 
     taskID++;
@@ -181,15 +181,45 @@ document.addEventListener("change", function(e) {
     }
 
 
-    if (e.target.id == "taskCheckBox" && e.target.checked) {
+    if (e.target.id == "taskCheckBox" && e.target.checked == true) {
 
         console.log("Checked");
 
-        e.target.parentElement.parentElement.classList.toggle("task-complete");
+        e.target.parentElement.parentElement.classList.add("task-complete");
+
+        let checkboxTaskID = e.target.parentElement.parentElement.id;
+        checkboxTaskID = Number(checkboxTaskID);
+
+        allProjects = allProjects.map(obj => {
+
+            if (obj.taskID === checkboxTaskID) {
+
+                return { ...obj, status: true};
+            }
+            return obj;
+        });
+
+        console.log(allProjects);
+
+        
     }
     else if (e.target.id == "taskCheckBox" && e.target.checked == false) {
 
-        e.target.parentElement.parentElement.classList.toggle("task-complete");
+        e.target.parentElement.parentElement.classList.remove("task-complete");
+
+        let checkboxTaskID = e.target.parentElement.parentElement.id;
+        checkboxTaskID = Number(checkboxTaskID);
+
+        allProjects = allProjects.map(obj => {
+
+            if (obj.taskID === checkboxTaskID) {
+
+                return { ...obj, status: false};
+            }
+            return obj;
+        });
+
+        console.log(allProjects);
     }
 
 

@@ -1,8 +1,9 @@
-export default function addTask(taskDesc, tskDate, tskID) {
+export default function addTask(taskDesc, tskDate, tskID, tskStatus) {
 
     let taskDescription = taskDesc;
     let taskDate = tskDate;
     let taskID = tskID;
+    let taskStatus = tskStatus;
 
     let newButton = document.createElement('button');
     newButton.setAttribute("id", taskID);
@@ -16,6 +17,16 @@ export default function addTask(taskDesc, tskDate, tskID) {
     leftInput.classList.add("form-check-input");
     leftInput.setAttribute("type", "checkbox");
     leftInput.setAttribute("id", "taskCheckBox");
+
+    if (taskStatus == true) {
+
+        leftInput.checked = true;
+        newButton.classList.add("task-complete");
+    }
+    else {
+
+        leftInput.classList.remove("task-complete");
+    }
 
     let leftDesc = document.createElement('p');
     leftDesc.classList.add("task-content");
