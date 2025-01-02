@@ -50,6 +50,11 @@ export default function populateData(allProjects, selectedProj) {
 
                 projectButtonList.appendChild(addButton(projTitle));
             }
+            else {
+
+                projectButtonList.appendChild(addButton(projTitle));
+
+            }
     
             let taskList = document.getElementById('tsk-lst');
         

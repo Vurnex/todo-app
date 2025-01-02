@@ -25,7 +25,39 @@ function component() {
 
 document.body.appendChild(component());
 
-populateData(allProjects, "default");
+console.log(allProjects);
+
+function saveData() {
+
+    localStorage.setItem("data", JSON.stringify(allProjects));
+}
+
+function getData() {
+
+    if (localStorage.length == 0) {
+
+        populateData(allProjects, "default");
+
+        console.log("Active");
+
+        saveData();
+    }
+    else {
+
+        allProjects = JSON.parse(localStorage.getItem("data"));
+
+        populateData(allProjects, "All Tasks");
+    }
+}
+
+function clearData() {
+
+    localStorage.clear();
+}
+
+//clearData(); For testing
+
+getData();
 
 
 document.getElementById('homeBtn').addEventListener('click', () => {
@@ -71,6 +103,8 @@ document.addEventListener('click', function(e) {
 
         allProjects = allProjects.filter(item => item.taskID !== currTaskIndex);
 
+        saveData();
+
         console.log(allProjects);
     }
 
@@ -114,6 +148,8 @@ document.getElementById('btn-add-proj-popup').addEventListener('click', () => {
 
     projectButtonList.appendChild(addButton(projectName));
 
+    saveData();
+
 });
 
 document.getElementById('add-tsk-btn').addEventListener('click', () => {
@@ -154,6 +190,8 @@ document.getElementById('btn-add-tsk-popup').addEventListener('click', () => {
         
     console.log(allProjects);
 
+    saveData();
+
 });
 
 document.addEventListener("change", function(e) {
@@ -178,6 +216,8 @@ document.addEventListener("change", function(e) {
         });
     
         console.log(allProjects);
+
+        saveData();
     }
 
 
@@ -201,6 +241,8 @@ document.addEventListener("change", function(e) {
 
         console.log(allProjects);
 
+        saveData();
+
         
     }
     else if (e.target.id == "taskCheckBox" && e.target.checked == false) {
@@ -220,12 +262,14 @@ document.addEventListener("change", function(e) {
         });
 
         console.log(allProjects);
+
+        saveData();
     }
 
 
 });
 
 
-//Get current project ID for when task is deleted
-//Get status of tasks from checkboxes
 //Set local storage
+
+
